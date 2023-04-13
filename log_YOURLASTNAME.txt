@@ -1,0 +1,1323 @@
+Message length before padding: 448 bits
+448 mod 512 = 448
+448 padded with 512-448 = 64 bits or 8 byte = 512 total bits
+Since 448 >= to 448 bit so, plus 512 bits or 64 byte padding
+
+char to hex  ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCD 
+			 41 42 43 44 45 46 47 48 49 4a 4b 4c 4d 4e 4f 50 51 52 53 54 55 56 57 58 59 5a 41 42 43 44 45 46 47 48 49 4a 4b 4c 4d 4e 4f 50 51 52 53 54 55 56 57 58 59 5a 41 42 43 44
+message_bin:			 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000 01001001 01001010 01001011 01001100 01001101 01001110 01001111 01010000 01010001 01010010 01010011 01010100 01010101 01010110 01010111 01011000 01011001 01011010 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000 01001001 01001010 01001011 01001100 01001101 01001110 01001111 01010000 01010001 01010010 01010011 01010100 01010101 01010110 01010111 01011000 01011001 01011010 01000001 01000010 01000011 01000100 
+message_bin + 1 bit:	 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000 01001001 01001010 01001011 01001100 01001101 01001110 01001111 01010000 01010001 01010010 01010011 01010100 01010101 01010110 01010111 01011000 01011001 01011010 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000 01001001 01001010 01001011 01001100 01001101 01001110 01001111 01010000 01010001 01010010 01010011 01010100 01010101 01010110 01010111 01011000 01011001 01011010 01000001 01000010 01000011 01000100 10000000
+char_hex 960 bits:		 4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a41424344 80 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+448 + 64 : 512 	 4142434445464748494a4b4c4d4e4f505152535455565758595a4142434445464748494a4b4c4d4e4f505152535455565758595a414243448000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001c0
+41424344 45464748 494a4b4c 4d4e4f50 
+51525354 55565758 595a4142 43444546 
+4748494a 4b4c4d4e 4f505152 53545556 
+5758595a 41424344 80000000 00000000 
+00000000 00000000 00000000 00000000 
+00000000 00000000 00000000 00000000 
+00000000 00000000 00000000 00000000 
+00000000 00000000 00000000 000001c0 
+Message length after padding: 1024
+Message: b'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCD\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xc0'
+
+Message chunk 0: b'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCD\x80\x00\x00\x00\x00\x00\x00\x00'
+Chunk 0 : Iteration 0:
+a = 67452301
+b = efcdab89
+c = 98badcfe
+d = 10325476
+e = c3d2e1f0
+Hash value: 67452301efcdab8998badcfe10325476c3d2e1f0
+
+Chunk 0 : Iteration 1:
+a = e0f6dbf7
+b = 67452301
+c = 7bf36ae2
+d = 98badcfe
+e = 10325476
+Hash value: e0f6dbf7674523017bf36ae298badcfe10325476
+
+Chunk 0 : Iteration 2:
+a = cad29351
+b = e0f6dbf7
+c = 59d148c0
+d = 7bf36ae2
+e = 98badcfe
+Hash value: cad29351e0f6dbf759d148c07bf36ae298badcfe
+
+Chunk 0 : Iteration 3:
+a = f2ab74dc
+b = cad29351
+c = f83db6fd
+d = 59d148c0
+e = 7bf36ae2
+Hash value: f2ab74dccad29351f83db6fd59d148c07bf36ae2
+
+Chunk 0 : Iteration 4:
+a = 5244aa3a
+b = f2ab74dc
+c = 72b4a4d4
+d = f83db6fd
+e = 59d148c0
+Hash value: 5244aa3af2ab74dc72b4a4d4f83db6fd59d148c0
+
+Chunk 0 : Iteration 5:
+a = c8f003ec
+b = 5244aa3a
+c = 3caadd37
+d = 72b4a4d4
+e = f83db6fd
+Hash value: c8f003ec5244aa3a3caadd3772b4a4d4f83db6fd
+
+Chunk 0 : Iteration 6:
+a = f6c7927d
+b = c8f003ec
+c = 94912a8e
+d = 3caadd37
+e = 72b4a4d4
+Hash value: f6c7927dc8f003ec94912a8e3caadd3772b4a4d4
+
+Chunk 0 : Iteration 7:
+a = b41e8e0c
+b = f6c7927d
+c = 323c00fb
+d = 94912a8e
+e = 3caadd37
+Hash value: b41e8e0cf6c7927d323c00fb94912a8e3caadd37
+
+Chunk 0 : Iteration 8:
+a = 905786a7
+b = b41e8e0c
+c = 7db1e49f
+d = 323c00fb
+e = 94912a8e
+Hash value: 905786a7b41e8e0c7db1e49f323c00fb94912a8e
+
+Chunk 0 : Iteration 9:
+a = 777d4762
+b = 905786a7
+c = 2d07a383
+d = 7db1e49f
+e = 323c00fb
+Hash value: 777d4762905786a72d07a3837db1e49f323c00fb
+
+Chunk 0 : Iteration 10:
+a = 355b96cb
+b = 777d4762
+c = e415e1a9
+d = 2d07a383
+e = 7db1e49f
+Hash value: 355b96cb777d4762e415e1a92d07a3837db1e49f
+
+Chunk 0 : Iteration 11:
+a = 3f0f6a91
+b = 355b96cb
+c = 9ddf51d8
+d = e415e1a9
+e = 2d07a383
+Hash value: 3f0f6a91355b96cb9ddf51d8e415e1a92d07a383
+
+Chunk 0 : Iteration 12:
+a = 922b3681
+b = 3f0f6a91
+c = cd56e5b2
+d = 9ddf51d8
+e = e415e1a9
+Hash value: 922b36813f0f6a91cd56e5b29ddf51d8e415e1a9
+
+Chunk 0 : Iteration 13:
+a = 692df6a6
+b = 922b3681
+c = 4fc3daa4
+d = cd56e5b2
+e = 9ddf51d8
+Hash value: 692df6a6922b36814fc3daa4cd56e5b29ddf51d8
+
+Chunk 0 : Iteration 14:
+a = aebab734
+b = 692df6a6
+c = 648acda0
+d = 4fc3daa4
+e = cd56e5b2
+Hash value: aebab734692df6a6648acda04fc3daa4cd56e5b2
+
+Chunk 0 : Iteration 15:
+a = e5fb1280
+b = aebab734
+c = 9a4b7da9
+d = 648acda0
+e = 4fc3daa4
+Hash value: e5fb1280aebab7349a4b7da9648acda04fc3daa4
+
+Chunk 0 : Iteration 16:
+a = 33b321f9
+b = e5fb1280
+c = 2baeadcd
+d = 9a4b7da9
+e = 648acda0
+Hash value: 33b321f9e5fb12802baeadcd9a4b7da9648acda0
+
+Chunk 0 : Iteration 17:
+a = 8d1ff814
+b = 33b321f9
+c = 397ec4a0
+d = 2baeadcd
+e = 9a4b7da9
+Hash value: 8d1ff81433b321f9397ec4a02baeadcd9a4b7da9
+
+Chunk 0 : Iteration 18:
+a = 58941124
+b = 8d1ff814
+c = 4cecc87e
+d = 397ec4a0
+e = 2baeadcd
+Hash value: 589411248d1ff8144cecc87e397ec4a02baeadcd
+
+Chunk 0 : Iteration 19:
+a = 83b0ab39
+b = 58941124
+c = 2347fe05
+d = 4cecc87e
+e = 397ec4a0
+Hash value: 83b0ab39589411242347fe054cecc87e397ec4a0
+
+Chunk 0 : Iteration 20:
+a = bd14106b
+b = 83b0ab39
+c = 16250449
+d = 2347fe05
+e = 4cecc87e
+Hash value: bd14106b83b0ab39162504492347fe054cecc87e
+
+Chunk 0 : Iteration 21:
+a = c8cc96ce
+b = bd14106b
+c = 60ec2ace
+d = 16250449
+e = 2347fe05
+Hash value: c8cc96cebd14106b60ec2ace162504492347fe05
+
+Chunk 0 : Iteration 22:
+a = 6b138a08
+b = c8cc96ce
+c = ef45041a
+d = 60ec2ace
+e = 16250449
+Hash value: 6b138a08c8cc96ceef45041a60ec2ace16250449
+
+Chunk 0 : Iteration 23:
+a = 8fdb1e69
+b = 6b138a08
+c = b23325b3
+d = ef45041a
+e = 60ec2ace
+Hash value: 8fdb1e696b138a08b23325b3ef45041a60ec2ace
+
+Chunk 0 : Iteration 24:
+a = 7902a6d8
+b = 8fdb1e69
+c = 1ac4e282
+d = b23325b3
+e = ef45041a
+Hash value: 7902a6d88fdb1e691ac4e282b23325b3ef45041a
+
+Chunk 0 : Iteration 25:
+a = 74dbdb35
+b = 7902a6d8
+c = 63f6c79a
+d = 1ac4e282
+e = b23325b3
+Hash value: 74dbdb357902a6d863f6c79a1ac4e282b23325b3
+
+Chunk 0 : Iteration 26:
+a = bbe44b9d
+b = 74dbdb35
+c = 1e40a9b6
+d = 63f6c79a
+e = 1ac4e282
+Hash value: bbe44b9d74dbdb351e40a9b663f6c79a1ac4e282
+
+Chunk 0 : Iteration 27:
+a = 936d110a
+b = bbe44b9d
+c = 5d36f6cd
+d = 1e40a9b6
+e = 63f6c79a
+Hash value: 936d110abbe44b9d5d36f6cd1e40a9b663f6c79a
+
+Chunk 0 : Iteration 28:
+a = 208050bd
+b = 936d110a
+c = 6ef912e7
+d = 5d36f6cd
+e = 1e40a9b6
+Hash value: 208050bd936d110a6ef912e75d36f6cd1e40a9b6
+
+Chunk 0 : Iteration 29:
+a = 754ccca0
+b = 208050bd
+c = a4db4442
+d = 6ef912e7
+e = 5d36f6cd
+Hash value: 754ccca0208050bda4db44426ef912e75d36f6cd
+
+Chunk 0 : Iteration 30:
+a = c2763a30
+b = 754ccca0
+c = 4820142f
+d = a4db4442
+e = 6ef912e7
+Hash value: c2763a30754ccca04820142fa4db44426ef912e7
+
+Chunk 0 : Iteration 31:
+a = fb468da9
+b = c2763a30
+c = 1d533328
+d = 4820142f
+e = a4db4442
+Hash value: fb468da9c2763a301d5333284820142fa4db4442
+
+Chunk 0 : Iteration 32:
+a = a08971d8
+b = fb468da9
+c = 309d8e8c
+d = 1d533328
+e = 4820142f
+Hash value: a08971d8fb468da9309d8e8c1d5333284820142f
+
+Chunk 0 : Iteration 33:
+a = ddbca31f
+b = a08971d8
+c = 7ed1a36a
+d = 309d8e8c
+e = 1d533328
+Hash value: ddbca31fa08971d87ed1a36a309d8e8c1d533328
+
+Chunk 0 : Iteration 34:
+a = fa16d6df
+b = ddbca31f
+c = 28225c76
+d = 7ed1a36a
+e = 309d8e8c
+Hash value: fa16d6dfddbca31f28225c767ed1a36a309d8e8c
+
+Chunk 0 : Iteration 35:
+a = 91b87aad
+b = fa16d6df
+c = f76f28c7
+d = 28225c76
+e = 7ed1a36a
+Hash value: 91b87aadfa16d6dff76f28c728225c767ed1a36a
+
+Chunk 0 : Iteration 36:
+a = 54e31be6
+b = 91b87aad
+c = fe85b5b7
+d = f76f28c7
+e = 28225c76
+Hash value: 54e31be691b87aadfe85b5b7f76f28c728225c76
+
+Chunk 0 : Iteration 37:
+a = 112f8444
+b = 54e31be6
+c = 646e1eab
+d = fe85b5b7
+e = f76f28c7
+Hash value: 112f844454e31be6646e1eabfe85b5b7f76f28c7
+
+Chunk 0 : Iteration 38:
+a = dfde19b5
+b = 112f8444
+c = 9538c6f9
+d = 646e1eab
+e = fe85b5b7
+Hash value: dfde19b5112f84449538c6f9646e1eabfe85b5b7
+
+Chunk 0 : Iteration 39:
+a = 69a8a9c2
+b = dfde19b5
+c = 44be111
+d = 9538c6f9
+e = 646e1eab
+Hash value: 69a8a9c2dfde19b544be1119538c6f9646e1eab
+
+Chunk 0 : Iteration 40:
+a = dabe4260
+b = 69a8a9c2
+c = 77f7866d
+d = 44be111
+e = 9538c6f9
+Hash value: dabe426069a8a9c277f7866d44be1119538c6f9
+
+Chunk 0 : Iteration 41:
+a = cf002f28
+b = dabe4260
+c = 9a6a2a70
+d = 77f7866d
+e = 44be111
+Hash value: cf002f28dabe42609a6a2a7077f7866d44be111
+
+Chunk 0 : Iteration 42:
+a = 4e12db11
+b = cf002f28
+c = 36af9098
+d = 9a6a2a70
+e = 77f7866d
+Hash value: 4e12db11cf002f2836af90989a6a2a7077f7866d
+
+Chunk 0 : Iteration 43:
+a = 8f8742b6
+b = 4e12db11
+c = 33c00bca
+d = 36af9098
+e = 9a6a2a70
+Hash value: 8f8742b64e12db1133c00bca36af90989a6a2a70
+
+Chunk 0 : Iteration 44:
+a = 17c4c0e9
+b = 8f8742b6
+c = 5384b6c4
+d = 33c00bca
+e = 36af9098
+Hash value: 17c4c0e98f8742b65384b6c433c00bca36af9098
+
+Chunk 0 : Iteration 45:
+a = 453b7685
+b = 17c4c0e9
+c = a3e1d0ad
+d = 5384b6c4
+e = 33c00bca
+Hash value: 453b768517c4c0e9a3e1d0ad5384b6c433c00bca
+
+Chunk 0 : Iteration 46:
+a = 17523eb7
+b = 453b7685
+c = 45f1303a
+d = a3e1d0ad
+e = 5384b6c4
+Hash value: 17523eb7453b768545f1303aa3e1d0ad5384b6c4
+
+Chunk 0 : Iteration 47:
+a = ed27c8ae
+b = 17523eb7
+c = 514edda1
+d = 45f1303a
+e = a3e1d0ad
+Hash value: ed27c8ae17523eb7514edda145f1303aa3e1d0ad
+
+Chunk 0 : Iteration 48:
+a = a47381dc
+b = ed27c8ae
+c = c5d48fad
+d = 514edda1
+e = 45f1303a
+Hash value: a47381dced27c8aec5d48fad514edda145f1303a
+
+Chunk 0 : Iteration 49:
+a = 6232a0d
+b = a47381dc
+c = bb49f22b
+d = c5d48fad
+e = 514edda1
+Hash value: 6232a0da47381dcbb49f22bc5d48fad514edda1
+
+Chunk 0 : Iteration 50:
+a = 1b75d72f
+b = 6232a0d
+c = 291ce077
+d = bb49f22b
+e = c5d48fad
+Hash value: 1b75d72f6232a0d291ce077bb49f22bc5d48fad
+
+Chunk 0 : Iteration 51:
+a = 5212af09
+b = 1b75d72f
+c = 4188ca83
+d = 291ce077
+e = bb49f22b
+Hash value: 5212af091b75d72f4188ca83291ce077bb49f22b
+
+Chunk 0 : Iteration 52:
+a = bf8f6a29
+b = 5212af09
+c = c6dd75cb
+d = 4188ca83
+e = 291ce077
+Hash value: bf8f6a295212af09c6dd75cb4188ca83291ce077
+
+Chunk 0 : Iteration 53:
+a = 7ba08abc
+b = bf8f6a29
+c = 5484abc2
+d = c6dd75cb
+e = 4188ca83
+Hash value: 7ba08abcbf8f6a295484abc2c6dd75cb4188ca83
+
+Chunk 0 : Iteration 54:
+a = 13b1d40c
+b = 7ba08abc
+c = 6fe3da8a
+d = 5484abc2
+e = c6dd75cb
+Hash value: 13b1d40c7ba08abc6fe3da8a5484abc2c6dd75cb
+
+Chunk 0 : Iteration 55:
+a = c9d9e433
+b = 13b1d40c
+c = 1ee822af
+d = 6fe3da8a
+e = 5484abc2
+Hash value: c9d9e43313b1d40c1ee822af6fe3da8a5484abc2
+
+Chunk 0 : Iteration 56:
+a = 4a7ddcf0
+b = c9d9e433
+c = 4ec7503
+d = 1ee822af
+e = 6fe3da8a
+Hash value: 4a7ddcf0c9d9e4334ec75031ee822af6fe3da8a
+
+Chunk 0 : Iteration 57:
+a = 37f481cf
+b = 4a7ddcf0
+c = f276790c
+d = 4ec7503
+e = 1ee822af
+Hash value: 37f481cf4a7ddcf0f276790c4ec75031ee822af
+
+Chunk 0 : Iteration 58:
+a = 1b5b5766
+b = 37f481cf
+c = 129f773c
+d = f276790c
+e = 4ec7503
+Hash value: 1b5b576637f481cf129f773cf276790c4ec7503
+
+Chunk 0 : Iteration 59:
+a = ab1b85ae
+b = 1b5b5766
+c = cdfd2073
+d = 129f773c
+e = f276790c
+Hash value: ab1b85ae1b5b5766cdfd2073129f773cf276790c
+
+Chunk 0 : Iteration 60:
+a = 55cffc7c
+b = ab1b85ae
+c = 86d6d5d9
+d = cdfd2073
+e = 129f773c
+Hash value: 55cffc7cab1b85ae86d6d5d9cdfd2073129f773c
+
+Chunk 0 : Iteration 61:
+a = 8e9530a8
+b = 55cffc7c
+c = aac6e16b
+d = 86d6d5d9
+e = cdfd2073
+Hash value: 8e9530a855cffc7caac6e16b86d6d5d9cdfd2073
+
+Chunk 0 : Iteration 62:
+a = c253d600
+b = 8e9530a8
+c = 1573ff1f
+d = aac6e16b
+e = 86d6d5d9
+Hash value: c253d6008e9530a81573ff1faac6e16b86d6d5d9
+
+Chunk 0 : Iteration 63:
+a = 28c68aa3
+b = c253d600
+c = 23a54c2a
+d = 1573ff1f
+e = aac6e16b
+Hash value: 28c68aa3c253d60023a54c2a1573ff1faac6e16b
+
+Chunk 0 : Iteration 64:
+a = f7c6c8a6
+b = 28c68aa3
+c = 3094f580
+d = 23a54c2a
+e = 1573ff1f
+Hash value: f7c6c8a628c68aa33094f58023a54c2a1573ff1f
+
+Chunk 0 : Iteration 65:
+a = 931fb157
+b = f7c6c8a6
+c = ca31a2a8
+d = 3094f580
+e = 23a54c2a
+Hash value: 931fb157f7c6c8a6ca31a2a83094f58023a54c2a
+
+Chunk 0 : Iteration 66:
+a = 7e192103
+b = 931fb157
+c = bdf1b229
+d = ca31a2a8
+e = 3094f580
+Hash value: 7e192103931fb157bdf1b229ca31a2a83094f580
+
+Chunk 0 : Iteration 67:
+a = 6392f7a0
+b = 7e192103
+c = e4c7ec55
+d = bdf1b229
+e = ca31a2a8
+Hash value: 6392f7a07e192103e4c7ec55bdf1b229ca31a2a8
+
+Chunk 0 : Iteration 68:
+a = 24bc376a
+b = 6392f7a0
+c = df864840
+d = e4c7ec55
+e = bdf1b229
+Hash value: 24bc376a6392f7a0df864840e4c7ec55bdf1b229
+
+Chunk 0 : Iteration 69:
+a = 6b121051
+b = 24bc376a
+c = 18e4bde8
+d = df864840
+e = e4c7ec55
+Hash value: 6b12105124bc376a18e4bde8df864840e4c7ec55
+
+Chunk 0 : Iteration 70:
+a = d19d6ea5
+b = 6b121051
+c = 892f0dda
+d = 18e4bde8
+e = df864840
+Hash value: d19d6ea56b121051892f0dda18e4bde8df864840
+
+Chunk 0 : Iteration 71:
+a = f6ecaceb
+b = d19d6ea5
+c = 5ac48414
+d = 892f0dda
+e = 18e4bde8
+Hash value: f6ecacebd19d6ea55ac48414892f0dda18e4bde8
+
+Chunk 0 : Iteration 72:
+a = 4f5db00
+b = f6ecaceb
+c = 74675ba9
+d = 5ac48414
+e = 892f0dda
+Hash value: 4f5db00f6ecaceb74675ba95ac48414892f0dda
+
+Chunk 0 : Iteration 73:
+a = d82d2ea0
+b = 4f5db00
+c = fdbb2b3a
+d = 74675ba9
+e = 5ac48414
+Hash value: d82d2ea04f5db00fdbb2b3a74675ba95ac48414
+
+Chunk 0 : Iteration 74:
+a = a8cf3ea6
+b = d82d2ea0
+c = 13d76c0
+d = fdbb2b3a
+e = 74675ba9
+Hash value: a8cf3ea6d82d2ea013d76c0fdbb2b3a74675ba9
+
+Chunk 0 : Iteration 75:
+a = 5b28b257
+b = a8cf3ea6
+c = 360b4ba8
+d = 13d76c0
+e = fdbb2b3a
+Hash value: 5b28b257a8cf3ea6360b4ba813d76c0fdbb2b3a
+
+Chunk 0 : Iteration 76:
+a = b241ec9d
+b = 5b28b257
+c = aa33cfa9
+d = 360b4ba8
+e = 13d76c0
+Hash value: b241ec9d5b28b257aa33cfa9360b4ba813d76c0
+
+Chunk 0 : Iteration 77:
+a = 7745bf60
+b = b241ec9d
+c = d6ca2c95
+d = aa33cfa9
+e = 360b4ba8
+Hash value: 7745bf60b241ec9dd6ca2c95aa33cfa9360b4ba8
+
+Chunk 0 : Iteration 78:
+a = b438b90
+b = 7745bf60
+c = 6c907b27
+d = d6ca2c95
+e = aa33cfa9
+Hash value: b438b907745bf606c907b27d6ca2c95aa33cfa9
+
+Chunk 0 : Iteration 79:
+a = 67ec4e81
+b = b438b90
+c = 1dd16fd8
+d = 6c907b27
+e = d6ca2c95
+Hash value: 67ec4e81b438b901dd16fd86c907b27d6ca2c95
+
+Processed message in 512-bit chunk 0
+67452301 + 84c7f165 = ec0d1466
+efcdab89 + 67ec4e81 = 57b9fa0a
+98badcfe + 2d0e2e4 = 9b8bbfe2
+10325476 + 1dd16fd8 = 2e03c44e
+c3d2e1f0 + 6c907b27 = 30635d17
+Hash value: ec0d146657b9fa0a9b8bbfe22e03c44e30635d17
+
+Message chunk 1: b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\xc0'
+Chunk 1 : Iteration 0:
+a = ec0d1466
+b = 57b9fa0a
+c = 9b8bbfe2
+d = 2e03c44e
+e = 30635d17
+Hash value: ec0d146657b9fa0a9b8bbfe22e03c44e30635d17
+
+Chunk 1 : Iteration 1:
+a = 481421d3
+b = ec0d1466
+c = 95ee7e82
+d = 9b8bbfe2
+e = 2e03c44e
+Hash value: 481421d3ec0d146695ee7e829b8bbfe22e03c44e
+
+Chunk 1 : Iteration 2:
+a = 229937d2
+b = 481421d3
+c = bb034519
+d = 95ee7e82
+e = 9b8bbfe2
+Hash value: 229937d2481421d3bb03451995ee7e829b8bbfe2
+
+Chunk 1 : Iteration 3:
+a = e71f92d0
+b = 229937d2
+c = d2050874
+d = bb034519
+e = 95ee7e82
+Hash value: e71f92d0229937d2d2050874bb03451995ee7e82
+
+Chunk 1 : Iteration 4:
+a = 6f669290
+b = e71f92d0
+c = 88a64df4
+d = d2050874
+e = bb034519
+Hash value: 6f669290e71f92d088a64df4d2050874bb034519
+
+Chunk 1 : Iteration 5:
+a = 925e19b3
+b = 6f669290
+c = 39c7e4b4
+d = 88a64df4
+e = d2050874
+Hash value: 925e19b36f66929039c7e4b488a64df4d2050874
+
+Chunk 1 : Iteration 6:
+a = 22118673
+b = 925e19b3
+c = 1bd9a4a4
+d = 39c7e4b4
+e = 88a64df4
+Hash value: 22118673925e19b31bd9a4a439c7e4b488a64df4
+
+Chunk 1 : Iteration 7:
+a = 61337a95
+b = 22118673
+c = e497866c
+d = 1bd9a4a4
+e = 39c7e4b4
+Hash value: 61337a9522118673e497866c1bd9a4a439c7e4b4
+
+Chunk 1 : Iteration 8:
+a = f49357dd
+b = 61337a95
+c = c884619c
+d = e497866c
+e = 1bd9a4a4
+Hash value: f49357dd61337a95c884619ce497866c1bd9a4a4
+
+Chunk 1 : Iteration 9:
+a = cd4bfef7
+b = f49357dd
+c = 584cdea5
+d = c884619c
+e = e497866c
+Hash value: cd4bfef7f49357dd584cdea5c884619ce497866c
+
+Chunk 1 : Iteration 10:
+a = 409e5583
+b = cd4bfef7
+c = 7d24d5f7
+d = 584cdea5
+e = c884619c
+Hash value: 409e5583cd4bfef77d24d5f7584cdea5c884619c
+
+Chunk 1 : Iteration 11:
+a = 93d66094
+b = 409e5583
+c = f352ffbd
+d = 7d24d5f7
+e = 584cdea5
+Hash value: 93d66094409e5583f352ffbd7d24d5f7584cdea5
+
+Chunk 1 : Iteration 12:
+a = aace40c5
+b = 93d66094
+c = d0279560
+d = f352ffbd
+e = 7d24d5f7
+Hash value: aace40c593d66094d0279560f352ffbd7d24d5f7
+
+Chunk 1 : Iteration 13:
+a = 2176076e
+b = aace40c5
+c = 24f59825
+d = d0279560
+e = f352ffbd
+Hash value: 2176076eaace40c524f59825d0279560f352ffbd
+
+Chunk 1 : Iteration 14:
+a = ed7bfc3f
+b = 2176076e
+c = 6ab39031
+d = 24f59825
+e = d0279560
+Hash value: ed7bfc3f2176076e6ab3903124f59825d0279560
+
+Chunk 1 : Iteration 15:
+a = fedd2f17
+b = ed7bfc3f
+c = 885d81db
+d = 6ab39031
+e = 24f59825
+Hash value: fedd2f17ed7bfc3f885d81db6ab3903124f59825
+
+Chunk 1 : Iteration 16:
+a = e5f77698
+b = fedd2f17
+c = fb5eff0f
+d = 885d81db
+e = 6ab39031
+Hash value: e5f77698fedd2f17fb5eff0f885d81db6ab39031
+
+Chunk 1 : Iteration 17:
+a = 7e818cb5
+b = e5f77698
+c = ffb74bc5
+d = fb5eff0f
+e = 885d81db
+Hash value: 7e818cb5e5f77698ffb74bc5fb5eff0f885d81db
+
+Chunk 1 : Iteration 18:
+a = b2d15daa
+b = 7e818cb5
+c = 397ddda6
+d = ffb74bc5
+e = fb5eff0f
+Hash value: b2d15daa7e818cb5397ddda6ffb74bc5fb5eff0f
+
+Chunk 1 : Iteration 19:
+a = 69450162
+b = b2d15daa
+c = 5fa0632d
+d = 397ddda6
+e = ffb74bc5
+Hash value: 69450162b2d15daa5fa0632d397ddda6ffb74bc5
+
+Chunk 1 : Iteration 20:
+a = 9e86b2d7
+b = 69450162
+c = acb4576a
+d = 5fa0632d
+e = 397ddda6
+Hash value: 9e86b2d769450162acb4576a5fa0632d397ddda6
+
+Chunk 1 : Iteration 21:
+a = 137f595f
+b = 9e86b2d7
+c = 9a514058
+d = acb4576a
+e = 5fa0632d
+Hash value: 137f595f9e86b2d79a514058acb4576a5fa0632d
+
+Chunk 1 : Iteration 22:
+a = e6c92795
+b = 137f595f
+c = e7a1acb5
+d = 9a514058
+e = acb4576a
+Hash value: e6c92795137f595fe7a1acb59a514058acb4576a
+
+Chunk 1 : Iteration 23:
+a = 6342eb79
+b = e6c92795
+c = c4dfd657
+d = e7a1acb5
+e = 9a514058
+Hash value: 6342eb79e6c92795c4dfd657e7a1acb59a514058
+
+Chunk 1 : Iteration 24:
+a = 373ffc1c
+b = 6342eb79
+c = 79b249e5
+d = c4dfd657
+e = e7a1acb5
+Hash value: 373ffc1c6342eb7979b249e5c4dfd657e7a1acb5
+
+Chunk 1 : Iteration 25:
+a = 1caa9ea7
+b = 373ffc1c
+c = 58d0bade
+d = 79b249e5
+e = c4dfd657
+Hash value: 1caa9ea7373ffc1c58d0bade79b249e5c4dfd657
+
+Chunk 1 : Iteration 26:
+a = df6aa602
+b = 1caa9ea7
+c = dcfff07
+d = 58d0bade
+e = 79b249e5
+Hash value: df6aa6021caa9ea7dcfff0758d0bade79b249e5
+
+Chunk 1 : Iteration 27:
+a = 1f96d15f
+b = df6aa602
+c = c72aa7a9
+d = dcfff07
+e = 58d0bade
+Hash value: 1f96d15fdf6aa602c72aa7a9dcfff0758d0bade
+
+Chunk 1 : Iteration 28:
+a = d014ed0e
+b = 1f96d15f
+c = b7daa980
+d = c72aa7a9
+e = dcfff07
+Hash value: d014ed0e1f96d15fb7daa980c72aa7a9dcfff07
+
+Chunk 1 : Iteration 29:
+a = eeae6bf8
+b = d014ed0e
+c = c7e5b457
+d = b7daa980
+e = c72aa7a9
+Hash value: eeae6bf8d014ed0ec7e5b457b7daa980c72aa7a9
+
+Chunk 1 : Iteration 30:
+a = abfe10c0
+b = eeae6bf8
+c = b4053b43
+d = c7e5b457
+e = b7daa980
+Hash value: abfe10c0eeae6bf8b4053b43c7e5b457b7daa980
+
+Chunk 1 : Iteration 31:
+a = 43c5ca22
+b = abfe10c0
+c = 3bab9afe
+d = b4053b43
+e = c7e5b457
+Hash value: 43c5ca22abfe10c03bab9afeb4053b43c7e5b457
+
+Chunk 1 : Iteration 32:
+a = d3c99a3d
+b = 43c5ca22
+c = 2aff8430
+d = 3bab9afe
+e = b4053b43
+Hash value: d3c99a3d43c5ca222aff84303bab9afeb4053b43
+
+Chunk 1 : Iteration 33:
+a = eea4438a
+b = d3c99a3d
+c = 90f17288
+d = 2aff8430
+e = 3bab9afe
+Hash value: eea4438ad3c99a3d90f172882aff84303bab9afe
+
+Chunk 1 : Iteration 34:
+a = e8d5d481
+b = eea4438a
+c = 74f2668f
+d = 90f17288
+e = 2aff8430
+Hash value: e8d5d481eea4438a74f2668f90f172882aff8430
+
+Chunk 1 : Iteration 35:
+a = bf3b659b
+b = e8d5d481
+c = bba910e2
+d = 74f2668f
+e = 90f17288
+Hash value: bf3b659be8d5d481bba910e274f2668f90f17288
+
+Chunk 1 : Iteration 36:
+a = ec6ea8c
+b = bf3b659b
+c = 7a357520
+d = bba910e2
+e = 74f2668f
+Hash value: ec6ea8cbf3b659b7a357520bba910e274f2668f
+
+Chunk 1 : Iteration 37:
+a = 3b51840a
+b = ec6ea8c
+c = efced966
+d = 7a357520
+e = bba910e2
+Hash value: 3b51840aec6ea8cefced9667a357520bba910e2
+
+Chunk 1 : Iteration 38:
+a = 2ff0d294
+b = 3b51840a
+c = 3b1baa3
+d = efced966
+e = 7a357520
+Hash value: 2ff0d2943b51840a3b1baa3efced9667a357520
+
+Chunk 1 : Iteration 39:
+a = be589b15
+b = 2ff0d294
+c = 8ed46102
+d = 3b1baa3
+e = efced966
+Hash value: be589b152ff0d2948ed461023b1baa3efced966
+
+Chunk 1 : Iteration 40:
+a = cc52fef3
+b = be589b15
+c = bfc34a5
+d = 8ed46102
+e = 3b1baa3
+Hash value: cc52fef3be589b15bfc34a58ed461023b1baa3
+
+Chunk 1 : Iteration 41:
+a = ac0986fd
+b = cc52fef3
+c = 6f9626c5
+d = bfc34a5
+e = 8ed46102
+Hash value: ac0986fdcc52fef36f9626c5bfc34a58ed46102
+
+Chunk 1 : Iteration 42:
+a = eef80c78
+b = ac0986fd
+c = f314bfbc
+d = 6f9626c5
+e = bfc34a5
+Hash value: eef80c78ac0986fdf314bfbc6f9626c5bfc34a5
+
+Chunk 1 : Iteration 43:
+a = 6931a79b
+b = eef80c78
+c = 6b0261bf
+d = f314bfbc
+e = 6f9626c5
+Hash value: 6931a79beef80c786b0261bff314bfbc6f9626c5
+
+Chunk 1 : Iteration 44:
+a = ff753ca
+b = 6931a79b
+c = 3bbe031e
+d = 6b0261bf
+e = f314bfbc
+Hash value: ff753ca6931a79b3bbe031e6b0261bff314bfbc
+
+Chunk 1 : Iteration 45:
+a = ec4d1978
+b = ff753ca
+c = da4c69e6
+d = 3bbe031e
+e = 6b0261bf
+Hash value: ec4d1978ff753cada4c69e63bbe031e6b0261bf
+
+Chunk 1 : Iteration 46:
+a = 9fc69f86
+b = ec4d1978
+c = 83fdd4f2
+d = da4c69e6
+e = 3bbe031e
+Hash value: 9fc69f86ec4d197883fdd4f2da4c69e63bbe031e
+
+Chunk 1 : Iteration 47:
+a = 8dfbf8bf
+b = 9fc69f86
+c = 3b13465e
+d = 83fdd4f2
+e = da4c69e6
+Hash value: 8dfbf8bf9fc69f863b13465e83fdd4f2da4c69e6
+
+Chunk 1 : Iteration 48:
+a = c4c28a89
+b = 8dfbf8bf
+c = a7f1a7e1
+d = 3b13465e
+e = 83fdd4f2
+Hash value: c4c28a898dfbf8bfa7f1a7e13b13465e83fdd4f2
+
+Chunk 1 : Iteration 49:
+a = 5b6cca05
+b = c4c28a89
+c = e37efe2f
+d = a7f1a7e1
+e = 3b13465e
+Hash value: 5b6cca05c4c28a89e37efe2fa7f1a7e13b13465e
+
+Chunk 1 : Iteration 50:
+a = 1fbbd28e
+b = 5b6cca05
+c = 7130a2a2
+d = e37efe2f
+e = a7f1a7e1
+Hash value: 1fbbd28e5b6cca057130a2a2e37efe2fa7f1a7e1
+
+Chunk 1 : Iteration 51:
+a = a204d6a7
+b = 1fbbd28e
+c = 56db3281
+d = 7130a2a2
+e = e37efe2f
+Hash value: a204d6a71fbbd28e56db32817130a2a2e37efe2f
+
+Chunk 1 : Iteration 52:
+a = b0e3081
+b = a204d6a7
+c = 87eef4a3
+d = 56db3281
+e = 7130a2a2
+Hash value: b0e3081a204d6a787eef4a356db32817130a2a2
+
+Chunk 1 : Iteration 53:
+a = e8e16642
+b = b0e3081
+c = e88135a9
+d = 87eef4a3
+e = 56db3281
+Hash value: e8e16642b0e3081e88135a987eef4a356db3281
+
+Chunk 1 : Iteration 54:
+a = 8dbfdc5b
+b = e8e16642
+c = 42c38c20
+d = e88135a9
+e = 87eef4a3
+Hash value: 8dbfdc5be8e1664242c38c20e88135a987eef4a3
+
+Chunk 1 : Iteration 55:
+a = b7ff6110
+b = 8dbfdc5b
+c = ba385990
+d = 42c38c20
+e = e88135a9
+Hash value: b7ff61108dbfdc5bba38599042c38c20e88135a9
+
+Chunk 1 : Iteration 56:
+a = 249b6ab
+b = b7ff6110
+c = e36ff716
+d = ba385990
+e = 42c38c20
+Hash value: 249b6abb7ff6110e36ff716ba38599042c38c20
+
+Chunk 1 : Iteration 57:
+a = ce966f6c
+b = 249b6ab
+c = 2dffd844
+d = e36ff716
+e = ba385990
+Hash value: ce966f6c249b6ab2dffd844e36ff716ba385990
+
+Chunk 1 : Iteration 58:
+a = 4002e80b
+b = ce966f6c
+c = c0926daa
+d = 2dffd844
+e = e36ff716
+Hash value: 4002e80bce966f6cc0926daa2dffd844e36ff716
+
+Chunk 1 : Iteration 59:
+a = 3f8e02c6
+b = 4002e80b
+c = 33a59bdb
+d = c0926daa
+e = 2dffd844
+Hash value: 3f8e02c64002e80b33a59bdbc0926daa2dffd844
+
+Chunk 1 : Iteration 60:
+a = ef957572
+b = 3f8e02c6
+c = d000ba02
+d = 33a59bdb
+e = c0926daa
+Hash value: ef9575723f8e02c6d000ba0233a59bdbc0926daa
+
+Chunk 1 : Iteration 61:
+a = 5aaf00fc
+b = ef957572
+c = 8fe380b1
+d = d000ba02
+e = 33a59bdb
+Hash value: 5aaf00fcef9575728fe380b1d000ba0233a59bdb
+
+Chunk 1 : Iteration 62:
+a = 46da2fd
+b = 5aaf00fc
+c = bbe55d5c
+d = 8fe380b1
+e = d000ba02
+Hash value: 46da2fd5aaf00fcbbe55d5c8fe380b1d000ba02
+
+Chunk 1 : Iteration 63:
+a = 96c29889
+b = 46da2fd
+c = 16abc03f
+d = bbe55d5c
+e = 8fe380b1
+Hash value: 96c2988946da2fd16abc03fbbe55d5c8fe380b1
+
+Chunk 1 : Iteration 64:
+a = dd8b3957
+b = 96c29889
+c = 411b68bf
+d = 16abc03f
+e = bbe55d5c
+Hash value: dd8b395796c29889411b68bf16abc03fbbe55d5c
+
+Chunk 1 : Iteration 65:
+a = f9217a36
+b = dd8b3957
+c = 65b0a622
+d = 411b68bf
+e = 16abc03f
+Hash value: f9217a36dd8b395765b0a622411b68bf16abc03f
+
+Chunk 1 : Iteration 66:
+a = ff36c0be
+b = f9217a36
+c = f762ce55
+d = 65b0a622
+e = 411b68bf
+Hash value: ff36c0bef9217a36f762ce5565b0a622411b68bf
+
+Chunk 1 : Iteration 67:
+a = 61ca34b5
+b = ff36c0be
+c = be485e8d
+d = f762ce55
+e = 65b0a622
+Hash value: 61ca34b5ff36c0bebe485e8df762ce5565b0a622
+
+Chunk 1 : Iteration 68:
+a = 1fc54f0a
+b = 61ca34b5
+c = bfcdb02f
+d = be485e8d
+e = f762ce55
+Hash value: 1fc54f0a61ca34b5bfcdb02fbe485e8df762ce55
+
+Chunk 1 : Iteration 69:
+a = 1abf4b85
+b = 1fc54f0a
+c = 58728d2d
+d = bfcdb02f
+e = be485e8d
+Hash value: 1abf4b851fc54f0a58728d2dbfcdb02fbe485e8d
+
+Chunk 1 : Iteration 70:
+a = e01d030e
+b = 1abf4b85
+c = 87f153c2
+d = 58728d2d
+e = bfcdb02f
+Hash value: e01d030e1abf4b8587f153c258728d2dbfcdb02f
+
+Chunk 1 : Iteration 71:
+a = 53fb694b
+b = e01d030e
+c = 46afd2e1
+d = 87f153c2
+e = 58728d2d
+Hash value: 53fb694be01d030e46afd2e187f153c258728d2d
+
+Chunk 1 : Iteration 72:
+a = c6fb169a
+b = 53fb694b
+c = b80740c3
+d = 46afd2e1
+e = 87f153c2
+Hash value: c6fb169a53fb694bb80740c346afd2e187f153c2
+
+Chunk 1 : Iteration 73:
+a = ed0ae459
+b = c6fb169a
+c = d4feda52
+d = b80740c3
+e = 46afd2e1
+Hash value: ed0ae459c6fb169ad4feda52b80740c346afd2e1
+
+Chunk 1 : Iteration 74:
+a = 5d528bff
+b = ed0ae459
+c = b1bec5a6
+d = d4feda52
+e = b80740c3
+Hash value: 5d528bffed0ae459b1bec5a6d4feda52b80740c3
+
+Chunk 1 : Iteration 75:
+a = b53cb631
+b = 5d528bff
+c = 7b42b916
+d = b1bec5a6
+e = d4feda52
+Hash value: b53cb6315d528bff7b42b916b1bec5a6d4feda52
+
+Chunk 1 : Iteration 76:
+a = fb95e9ad
+b = b53cb631
+c = d754a2ff
+d = 7b42b916
+e = b1bec5a6
+Hash value: fb95e9adb53cb631d754a2ff7b42b916b1bec5a6
+
+Chunk 1 : Iteration 77:
+a = 8096b13
+b = fb95e9ad
+c = 6d4f2d8c
+d = d754a2ff
+e = 7b42b916
+Hash value: 8096b13fb95e9ad6d4f2d8cd754a2ff7b42b916
+
+Chunk 1 : Iteration 78:
+a = 9651d42b
+b = 8096b13
+c = 7ee57a6b
+d = 6d4f2d8c
+e = d754a2ff
+Hash value: 9651d42b8096b137ee57a6b6d4f2d8cd754a2ff
+
+Chunk 1 : Iteration 79:
+a = bf96073b
+b = 9651d42b
+c = c2025ac4
+d = 7ee57a6b
+e = 6d4f2d8c
+Hash value: bf96073b9651d42bc2025ac47ee57a6b6d4f2d8c
+
+Processed message in 512-bit chunk 1
+ec0d1466 + 59f13f5d = 45fe53c3
+57b9fa0a + bf96073b = 17500145
+9b8bbfe2 + e594750a = 812034ec
+2e03c44e + c2025ac4 = f0061f12
+30635d17 + 7ee57a6b = af48d782
+Hash value: 45fe53c317500145812034ecf0061f12af48d782
+
+FINAL HASH: 45fe53c317500145812034ecf0061f12af48d782
+
+
