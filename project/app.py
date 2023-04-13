@@ -37,8 +37,6 @@ Has_file = False
 Has_key = False
 Except_file =".enc"
 
-
-
 # Check if a file has been uploaded
 file_name = ""
 if uploaded_file is not None:
