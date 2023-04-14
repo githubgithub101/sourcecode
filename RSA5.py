@@ -13,7 +13,6 @@ privKeyPEM = keyPair.exportKey()
 print(privKeyPEM.decode('ascii'))
 
 
-
 # RSA Encryption
 from Crypto.Cipher import PKCS1_OAEP
 import binascii
