@@ -67,7 +67,6 @@ print(f"e = \t\t{e}")
 print(f"d = \t\t{d}")
 print(f"phi=(p-1)*(q-1) = {totient}")
 
-
 print()
 print(f"Encryption keys e: {e} n: {n}")
 # Encryption c = (msg ^ e) % n
